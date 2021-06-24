@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundamentos JavaScript</title>
+  </head>
+
+  <body>
+    <h1>Fundamentos JavaScript</h1>
+    <h1>029_Window.Alert_Confirm_Prompt.js</h1>
+
+    <script>
+      /* //Curso_JavaScript_002_Variaveis-Global-Bloco.js
+
+        //codigo JS
+        var mundo = "Olá mundo";
+        let meuNomeEh = "Rodrigo Muniz";
+        console.log(mundo);
+        console.log(meuNomeEh);
+
+        /* comentario de varias linhas
+        continuação
+
+        let musica = "Rock";
+        console.log("Variavel musica antes do bloco", musica);
+        //Escopo de bloco
+        {
+          //console.log( "Variavel musica no bloco, antes da nova declaração",musica);
+          let musica = "Pop";
+          console.log(
+            "Variavel musica no bloco, depois da nova declaração",
+            musica
+          );
+        }
+        console.log("Variavel musica após bloco", musica);
+        */
+
+      /* //Curso_JavaScript_003_Variaveis-Constantes.js
+
+        const PI = 3.14159265359;
+        console.log(PI);
+
+        //const ZERO;
+
+        let nomeUser;
+        var navegadorUtilizado;
+
+        //codigo executado em algum momento
+        nomeUser = "Rodrigo Muniz";
+
+        console.log(nomeUser);
+
+        //PI = 3.1416;
+
+        //console.log({});
+        //console.log([]);
+
+        const objeto = {
+          nome: "Rodrigo",
+          idade: 35,
+        };
+
+        const cores = ["branco", "preto", "verde"];
+
+        console.log(objeto);
+        console.log(cores);
+
+        objeto.email = "rodrigomunizz@gmail.com";
+        cores.push("azul");
+
+        console.log(objeto);
+        console.log(cores); */
+
+      /*//Curso_JavaScript_004_Cadeia-Caracteres-Strings.js
+
+        //Strings
+        let nome = "Rodrigo";
+        let sobrenome = "Muniz";
+
+        let olaMundo = new String("Ola mundo");
+
+        console.log(nome, sobrenome);
+        console.log(olaMundo);
+
+        console.log(sobrenome.length);
+
+        let email = "rodrigoMUNIZZ@gmail.com";
+
+        console.log(nome.toUpperCase(), email.toLowerCase());
+
+        let loremIpsum =
+          "     Lorem ipsum eleifend scelerisque augue etiam tempor morbi ad mauris pharetra tempor tincidunt ultrices nibh commodo nostra, taciti turpis fusce ultrices laoreet elit morbi nullam nisi turpis lectus porta vestibulum praesent. venenatis quam fames vel dictum integer justo, sapien lacus commodo vel fames etiam, aenean orci vel blandit vestibulum. tortor nam fusce habitasse maecenas eleifend hac sollicitudin phasellus vel, sollicitudin fringilla lectus aliquet torquent suspendisse aliquam pulvinar, taciti curae ornare dapibus hendrerit magna auctor dui. posuere aliquam donec orci donec litora amet augue ligula, phasellus vel nostra auctor malesuada primis tempus, ante vestibulum ultricies nam lacinia eleifend netus.";
+
+        //console.log(loremIpsum);
+
+        console.log(loremIpsum.includes("justo"));
+
+        console.log(loremIpsum.includes("Rodrigo"));
+
+        console.log(loremIpsum.trim());
+
+        let usuario = "Goku, 33, 123 Street";
+
+        console.log(usuario.split(", ")); */
+
+      /*       //Curso_JavaScript_005_Strings-Templates.js
+
+      let site = "Youtube";
+      let canal = "New Language";
+
+      //Concatenação
+
+      let acesso = "Acesso " + site + " - " + canal + ".";
+
+      console.log(acesso);
+
+      //Interpolação de Variaveis
+      //Template String
+
+      let acessoDois = `Acesso ${site} - ${canal}.`;
+      console.log(acessoDois);
+
+      let meses =
+        "<ul><li>janeiro</li><li>fevereiro</li><li>março</li><li>abril</li><li>maio</li><li>junho</li><li>julho</li><li>agosto</li><li>setembro</li><li>outubro</li><li>novembro</li><li>dezembro</li></ul>";
+      console.log(meses);
+
+      let meses2 = `<ul>
+            <li>janeiro</li>
+            <li>fevereiro</li>
+            <li>março</li>
+            <li>abril</li>
+            <li>maio</li>
+            <li>junho</li>
+            <li>julho</li>
+            <li>agosto</li>
+            <li>setembro</li>
+            <li>outubro</li>
+            <li>novembro</li>
+            <li>dezembro</li>
+        </ul>`;
+
+      console.log(meses2); */
+
+      /*       //Curso_JavaScript_006_Numeros.js
+
+      let numeroNove = 9;
+      let numeroUm = new Number(1);
+
+      console.log(numeroNove, numeroUm);
+
+      let numeroE = 2.72;
+
+      console.log(numeroE);
+
+      console.log(numeroE.toFixed(1));
+      console.log(numeroE.toFixed(3));
+
+      console.log(parseInt(numeroE));
+
+      console.log(parseFloat(numeroE));
+
+      let idade = "35.14";
+
+      console.log(typeof numeroE);
+      console.log(typeof idade);
+
+      console.log(numeroUm + numeroNove);
+
+      //casting
+      console.log(numeroE + parseInt(idade));
+      console.log(numeroE + Number.parseFloat(idade));
+
+      var a = 7;
+      console.log(window.a); */
+
+      /* // Curso_JavaScript_007_Booleanos.js
+
+      let verdadeiro = true;
+      let falso = false;
+
+      console.log(verdadeiro, falso);
+
+      console.log(typeof verdadeiro, typeof falso);
+
+      let verdadeiroConstrutor = Boolean(true);
+      let falsoConstrutor = Boolean(false);
+
+      console.log (verdadeiroConstrutor, falsoConstrutor);
+
+      console.log(Boolean());
+      console.log(Boolean(0));
+      console.log(Boolean(-3));
+      console.log(Boolean(""));
+      console.log(Boolean("a")); */
+
+      /* //Curso_JavaScript_008_Null-Undefined-NaN.js
+
+let indefinida;
+console.log(indefinida);
+
+let nulo = null;
+console.log(nulo);
+
+let notANumber = "Hoje" * 37;
+console.log(notANumber); */
+
+      /* //Curso_JavaScript_009_Funções.js
+
+
+//Função Declarada
+function issoEhUmaFuncaoDeclarada () {
+  //codigo
+  console.log("Primeiro");
+  console.log("Segundo");
+  console.log("Terceiro");
+}
+
+//issoEhUmaFuncaoDeclarada();
+//console.log("fora da função");
+
+function devolveValor(){
+  console.log("Dentro da função que retorna valor");
+  return "Texto retornado pela função."
+}
+
+//console.log(devolveValor());
+
+//let retornoDaFuncao = devolveValor();
+
+//console.log(retornoDaFuncao);
+//console.log("continuando execução");
+
+function recebeValores (diaCorridoAno = 0, diaDaSemana = "Não Encontrado", tempo = "Não Retornado"){
+  console.log(`Hoje é o ${diaCorridoAno}º dia do ano. ${diaDaSemana}. E se encontra ${tempo}.`);
+}
+
+//recebeValores(35, "Quinta-Feira", "Calor");
+//recebeValores();
+
+//funcaoDeclarada();
+
+function funcaoDeclarada(){
+  console.log("Retorno da função de nome funcaodeclarada.")
+}
+
+//Função declarada VS. Função Expressada
+
+//Função Anonima
+
+//funcaoExpressada();
+
+const funcaoExpressada = function () {
+  console.log("Essa é uma função expressada. Uma função que foi assinada a uma variavel. Se chamarmos essa função, antes da declaração, o JS vai...");
+}
+
+/* 1 - Importação de módulos
+2 - Declaração de variaveis
+3 - Declaração de funções
+4 - Execução de código */
+
+      /* //Curso_JavaScript_010_Arrays.js
+
+const nossoPrimeiroArray = [];
+console.log(nossoPrimeiroArray);
+
+const eu = ["Rodrigo Muniz", 35, true, ["Corrida", "Capoeira",[15,17,19], "Musculação"]];
+console.log(eu);
+console.log(eu.length);
+
+console.log(eu[3][2][0]);
+
+const novoArray = Array.of("A","B","C",10,false);
+console.log(novoArray);
+
+const desconto = Array(100).fill(false);
+console.log(desconto);
+
+const criandoArrayDesuso = new Array();
+console.log(criandoArrayDesuso);
+
+const numerosImpares = [1,3,5,7];
+console.log(numerosImpares);
+numerosImpares.push(9,10);
+console.log(numerosImpares);
+numerosImpares.pop();
+console.log(numerosImpares);
+
+const cores = ["Vermelho", "Verde", "Azul"];
+
+cores.forEach(function(el, index){
+  console.log(`<li id=${index}>${el}</li>`)
+}); */
+
+      /* //Curso_JavaScript_011_Objetos.js
+
+
+let a = new String("Adeus");
+console.log(a);
+
+const b = {};
+console.log(b);
+
+const c = new Object();
+console.log(c);
+
+//Dentro de um objeto as variaveis se vão chamar de atributos/propriedades
+//Dentro de um objeto as funções se vão chamar de métodos
+const rodrigoMuniz = {
+  nome: "Rodrigo",
+  sobrenome: "Muniz",
+  idade: 35,
+  hobbys: ["Capoeira","Estudar","Treinar","Violão"],
+  brasileiro: true,
+  contato:{
+    email:"rodrigomunizz@gmail.com",
+    telefone:"5521987654321",
+  },
+  acesso: function(){
+    console.log("Olá. Acesso realizado!");
+  },
+  retornoDados: function(){
+    console.log(`Olá ${this.nome} ${this.sobrenome}. Seja bem vindo!`);
+  }
+}
+
+console.log(rodrigoMuniz.nome);
+console.log(rodrigoMuniz.sobrenome);
+console.log(rodrigoMuniz.idade);
+console.log(rodrigoMuniz.brasileiro);
+
+console.log(rodrigoMuniz.hobbys[3]);
+
+console.log(rodrigoMuniz.contato.email);
+
+rodrigoMuniz.acesso();
+
+rodrigoMuniz.retornoDados();
+
+console.log(Object.keys(rodrigoMuniz));
+
+console.log(Object.values(rodrigoMuniz));
+
+console.log(rodrigoMuniz.hasOwnProperty("nome"));
+console.log(rodrigoMuniz.hasOwnProperty("Endereço")); */
+
+      /* //Curso_JavaScript_012_Operadores_Tipos.js
+
+//Operadores
+
+//Operadores Aritméticos:
+//soma = +
+//subtração = -
+//multiplicação = *
+//divisão = /
+//Resto inteiro da divisão = %
+//agrupamento = ()
+
+//soma//
+let soma = 10 + 5;
+console.log(soma);
+
+let equacao = 10 + 3 - 13 * 2 ;
+console.log(equacao);
+
+let equacao2 = 10 + (3 - 13) * 2 ;
+console.log(equacao2);
+
+//multiplicação
+let multiplicacao = 10 * 5;
+console.log(multiplicacao);
+
+//divisão//
+let divisao = 7 / 3;
+console.log(divisao);
+
+//modulo
+let modulo = 7 % 3;
+console.log(modulo);
+
+// Operadores de Comparação
+// Igual (==)
+// Não igual (!=)
+// Estritamente igual (===)
+// Estritamente não igual (!==)
+// Maior que (>)
+// Maior que ou igual (>=)
+// Menor que (<)
+// Menor que ou igual (<=)
+
+let var1 = 3;
+let var2 = 4;
+
+// Igual (==)
+console.log (var1=="3");
+
+// Não igual (!=)
+console.log(var1!=var2);
+
+// Estritamente igual (===)
+console.log (var1===3);
+console.log (var1==="3");
+
+// Estritamente não igual (!==)
+console.log (var1!=="3");
+console.log (var2!==4);
+
+//Maior que (>)
+console.log (var2>var1);
+
+//Maior que ou igual (>=)
+console.log (4>=var2);
+
+//Menor que (<)
+console.log (var1<var2);
+
+//Menor que ou igual (<=);
+console.log (var2<=5);
+
+console.log("============================================");
+
+//Operadores de atribuição
+
+let x;
+let y;
+let resultado;
+
+//Atribuição
+x = 9;
+y = 3;
+
+//Atribuição de adição
+x += y;
+//x = x + y
+console.log(x);
+console.log("-----");
+
+//Atribuição de subtração
+x -= y
+//x = x - y
+console.log(x);
+console.log("-----");
+
+//Atribuição de divisão
+x /= y;
+//x = x / y
+console.log(x);
+console.log("-----");
+
+x = 5;
+y = 2;
+
+//Atribuição de resto
+x %= y;
+//x = x % y
+console.log(x);
+console.log("-----");
+
+x = 2;
+y = 3;
+
+//Atribuição exponencial
+x **= y;
+//x = x ** y
+console.log(x);
+console.log("-----");
+
+let i = 1;
+
+i++;
+//++i
+//i = i + 1;
+console.log(i);
+console.log("-----");
+
+let alpha = 1;
+console.log(alpha++);
+console.log(alpha);
+
+//Operadores Logícos
+
+//AND lógico (&&)
+//OU lógico (||)
+//NOT lógico (!)
+
+let prova1 = 10;
+let prova2 = 10;
+
+console.log((prova1===10) && (prova2===10));
+
+let pessoaSalario = 8000;
+let pessoaFilho = false;
+
+console.log((pessoaSalario>=10000) || (pessoaFilho===true));
+
+let retornoFalse = false;
+let retornoTrue = true;
+
+console.log (!retornoFalse);
+console.log (!retornoTrue);
+ */
+
+      /* //Curso_JavaScript_013_Tomando_Decisões_Código-Condicionais.js
+
+
+let idade = 17;
+
+if (idade >= 18){
+  console.log("Cliente pode comprar bebida!");
+}else{
+  console.log("Clienta menor que 18. Venda proibida");
+}
+
+let idade2 = 17;
+
+if (idade2 <= 17){
+  console.log("Clienta menor que 18. Venda proibida");
+}else{
+  console.log("Cliente pode comprar bebida!");
+}
+
+//fazer um sistema que dependendo da hora do dia, 
+//apresenta a saudação referente.
+
+// 5 horas até 11 horas - bom dia 
+// 12 horas até 17 horas - boa tarde   
+// 18 horas ate 4 horas - boa noite
+
+let hora = 5;
+
+if (hora >= 5 && hora <= 11){
+  console.log("Bom dia!");
+}else if (hora > 11 && hora <= 17){
+  console.log("Boa Tarde!");
+}else{
+  console.log("Boa Noite!");
+}
+
+//Operador Ternário
+//(condição) ? se condição true : se condição false;
+
+
+let idadeAluno = 16;
+
+let responsabilidade = (idadeAluno >= 18) ? "Aluno pode assinar sua documentação." : "Solicitar assinatura dos pais ou responsaveis.";
+
+console.log(responsabilidade);
+
+/* Domingo - Dia 00
+Segunda - Dia 01
+Terça - Dia 02
+Quarta - Dia 03
+Quinta - Dia 04
+Sexta - Dia 05
+Sabado - Dia 06 
+
+let dia = 04;
+
+switch (dia) {
+  case 0:
+    console.log("Domingo");
+    break;
+  
+  case 1:
+	  console.log("Segunda.");
+	  break;
+
+	case 2:
+	  console.log("Terça.");
+	  break;
+
+	case 3:
+	  console.log("Quarta.");
+	  break;
+
+	case 4:
+	  console.log("Quinta.");
+	  break;
+	
+	case 5:
+	  console.log("Sexta.");
+	  break;
+	
+	case 6:
+	  console.log("Sabado.");
+	  break;
+
+  default:
+    console.log("Não é um dia valido.")
+    break;
+} */
+
+      /* //Curso_JavaScript_014_Laços_Iterações.js
+
+let contador = 0;
+
+while (contador <= 10){
+  console.log(contador);
+  contador++;
+}
+console.log("Fora do while");
+console.log(contador);
+
+console.log("=====");
+
+let contador2 = 10;
+
+do{
+  console.log(contador2);
+  contador2--;
+}while(contador2 >= 0);
+
+console.log("===FOR===")
+
+for (let i = 0; i <= 10; i++) {
+  console.log(i);
+}
+console.log("Fora do for");
+
+console.log("=======");
+
+let numeros = [10,20,30,40,50,60];
+
+console.log (numeros.length);
+
+for (let i = 0; i < numeros.length; i++){
+  console.log("Posição: " + i + " - " + numeros[i] + ".");
+}
+
+console.log("======");
+
+const rodrigoMuniz = {
+	nome: "Rodrigo",
+	sobrenome: "Muniz",
+	idade: 35,
+	hobbys:["Capoeira","Estudar","Treinar","Violão"],
+	brasileiro: true,
+	contato:{
+		email: "rodrigomunizz@gmail.com",
+		telefone:"5521987654321"
+	}
+}
+
+for (const propriedade in rodrigoMuniz) {
+  console.log(`Key: ${propriedade} - Valor: ${rodrigoMuniz[propriedade]}`);
+}
+
+let cadeiaDeCaracteres = "Olá Mundo";
+
+for (const caracter of cadeiaDeCaracteres) {
+  console.log(caracter);  
+} */
+
+      /* //Curso_JavaScript_015_Manipulação_de_Erro.js
+
+//variavelquenaoexiste;
+
+try {
+  console.log("Try - Codigo que será avaliado");
+  variavelQueNaoExiste;
+  console.log("Segunda mensagem");
+} catch (error) {
+  console.log(error);
+  console.log("Catch - Captura qualquer retorno de erro do try" );
+}finally{
+  console.log("Finally - Se executará sempre ao final de um bloco try-cacth");
+}
+
+console.log("===")
+
+try {
+  let numero = "oi";
+  if(isNaN(numero)){
+    throw new Error("Variavel não é um número valido")
+  }
+  console.log(numero*numero);
+  
+} catch (error) {
+  console.log(`Sistema apresentou uma inconsistencia - ${error}`);
+} */
+
+      /* //Curso_JavaScript_016_Continue_Break.js
+
+const numeros = [1,2,3,4,5,6,7,8,9,0];
+
+//console.log(numeros.length);
+
+for (let i=0; i < numeros.length; i++){
+  if (i===5) {
+    break;
+  }
+  console.log(numeros[i]);
+}
+console.log("Codigo após o for");
+
+console.log("=====================");
+
+for (let i=0; i < numeros.length; i++){
+  if (i===5) {
+    continue;
+    console.log("Isso imprime?");
+  }
+  console.log(`posição ${i} - ` + numeros[i]);
+}
+console.log("Codigo após o for com continue"); */
+
+      /* //Curso_JavaScript_017_Atribuição_Desestruturação.js
+
+let numeros = [1,2,3];
+
+let primeiroElemento = numeros[0];
+let segundoElemento = numeros[1];
+let terceiroElemento = numeros[2];
+
+console.log(primeiroElemento, segundoElemento, terceiroElemento);
+
+const [one, two, three] = numeros;
+
+console.log(one, two, three);
+
+let pessoa = {
+  nome: "Rodrigo",
+  sobrenome: "Muniz",
+  idade: 35
+}
+
+let {nome, idade, sobrenome} = pessoa;
+
+console.log(nome, sobrenome, idade); */
+
+      /* //Curso_JavaScript_018_Objetos_Literais.js
+
+let nome = "Goku",
+idade = 40;
+
+const personagem = {
+  nome: nome,
+  idade: idade,
+  superSayajin: function(){
+    console.log("Atingido!!!");
+  }
+}
+
+console.log(personagem);
+
+personagem.superSayajin();
+
+console.log("============");
+
+const dragonBall = {
+  nome,
+  idade,
+  endereco: "Terra",
+  superSayajin(){
+    console.log("Poder Atingido!!!");
+  }
+}
+
+console.log(dragonBall);
+
+dragonBall.superSayajin(); */
+
+      /* //Curso_JavaScript_019_Parâmetros-Rest_Spread_Operator.js
+
+function somar (a, b){
+  return a+b;
+}
+
+function somar2 (a,b,...c){
+  let resultado = a + b;
+
+  c.forEach(function(n){
+    resultado +=n;
+  })
+
+  return resultado;
+}
+
+console.log(somar2(1,2,3));
+console.log(somar2(1,2,3,4));
+console.log(somar2(1,2,3,4,5));
+
+console.log("=================");
+
+const array01 = [1,2,3,4,5];
+
+const array02 = [6,7,8,9,0];
+
+console.log(array01,array02);
+
+const array03 = [array01, array02];
+
+console.log(array03);
+
+const array04 = [...array01, ...array02];
+
+console.log(array04); */
+
+      /* //Curso_JavaScript_020_Arrow_Functions.js
+
+const olaMundo = function(){
+  console.log("Olá Mundo");
+}
+olaMundo();
+
+
+function olaMundo2(){
+  console.log("Olá Mundo 2");
+}
+olaMundo2();
+
+const olaMundo3 = () => {
+  console.log("Ola Mundo 3!");
+}
+olaMundo3();
+
+const olaMundo4 = () => console.log("Ola Mundo 4!");
+olaMundo4();
+
+const pessoa = nome => console.log(`Oi ${nome}!!!`);
+pessoa("Rodrigo");
+
+const somar = function (a,b){
+  return a+b;
+}
+console.log(somar(7,8));
+
+const somarAF = (a,b) => a+b;
+console.log(somarAF(7,8));
+
+const funcaoDeVariasLinhas = () =>{
+  console.log("Um");
+  console.log("Dois");
+  console.log("Três");
+}
+funcaoDeVariasLinhas();
+
+const numeros = [1,2,3,4,5];
+
+numeros.forEach(function(el,index){
+  console.log(`O elemento ${el} esta na posição ${index}.`);
+})
+
+numeros.forEach((el,index) => {
+  console.log(`${el} esta na posição ${index}.`);
+})
+
+function cachorro(){
+  console.log(this);
+}
+cachorro();
+
+const cachorroDois = {
+  nome:"Link",
+  latir(){
+    console.log(this);
+  }
+}
+cachorroDois.latir();
+ */
+
+      /* //Curso_JavaScript_021_Prototype.js
+
+//POO
+  //Classes
+    // - Modelo a seguir
+  //Objetos
+    // - É uma instancia de uma classe
+    //...atributos
+      //Caracteristica ou propriedade de 
+      //um objeto. Variaveis dentro de um objeto.
+    //...metodos
+      //Ações que os objetos podem realizar -
+      //funções dentro de um objeto
+
+
+/* const animal = {
+  nome : "Scooby Doo",
+  som(){
+    console.log("Scoobu dooby doo")
+  }
+}  
+console.log(animal);
+
+const animal2 = {
+  nome : "Pernalonga",
+  som(){
+    console.log("O que é que há velhinho?")
+  }
+}  
+console.log(animal2); */
+
+      //Função Construtora
+      /* function Animal (nome, genero){
+  this.nome = nome;
+  this.genero = genero;
+
+  this.realizarSom = function(som){
+    console.log(som);
+  }
+
+  this.outroMetodoQualquer = function(action){
+    console.log(`Executo uma ação em cima do retornado em ${action}. E retorno nome = ${this.nome}.`);
+  }
+}
+
+function Animal (nome, genero){
+  //Atributos
+  this.nome = nome;
+  this.genero = genero;
+}
+
+//Metodos
+Animal.prototype.realizarSom = function(som){
+  console.log(som);
+}
+Animal.prototype.outroMetodoQualquer = function(action){
+  console.log(`Executo uma ação em cima do retornado em ${action}. E retorno nome = ${this.nome}.`);
+}
+
+const scoobyDoo = new Animal ("Scooby Doo", "Macho");
+const pernalonga = new Animal ("Pernalonga", "Macho");
+
+console.log(scoobyDoo);
+console.log(pernalonga);
+
+scoobyDoo.realizarSom("Scoobu dooby doo");
+scoobyDoo.outroMetodoQualquer("Action qualquer 1");
+pernalonga.realizarSom("O que é que há velhinho?");
+pernalonga.outroMetodoQualquer("Action qualquer 1");*/
+
+      /* //Curso_JavaScript_022_Prototype_Chains.js
+
+//Função construtora
+//Assinatura do metodo ao prototipo
+function Animal (nome, genero){
+	//Atributos
+	this.nome = nome;
+	this.genero = genero;
+	
+}
+
+//Metodos Agregados ao Prototipo da Função Construtora
+Animal.prototype.realizarSom = function(som){
+	console.log(som);
+}
+Animal.prototype.outroMetodoQualquer = function(action){
+	console.log(`Executo uma ação em cima do retornado em ${action}. E retorno nome = ${this.nome}.`)
+}
+
+//Herança Protótipos
+
+function Cachorro (nome, genero, raca) {
+  //super();
+  this.super = Animal;
+  this.super(nome,genero);
+  this.raca = raca;
+}
+
+//Cachorro está herdando de Animal
+Cachorro.prototype = new Animal();
+
+Cachorro.prototype.constructor = Cachorro;
+
+//Sobreescrever metodo do prototipo pai
+
+Cachorro.prototype.outroMetodoQualquer = function(){
+  console.log(`Tenho outra ação dentro do metodo filho, cachorro.`);
+}
+
+Cachorro.prototype.latir = function (){
+  console.log("Au au au au");
+}
+
+const scoobyDoo = new Cachorro("Scooby Doo", "Macho", "Bloodhound");
+
+const pernalonga = new Animal("Pernalonga", "Macho");
+
+//console.log(scoobyDoo);
+//console.log(pernalonga);
+
+scoobyDoo.realizarSom("Scooby dooby doo");
+scoobyDoo.outroMetodoQualquer("Action qualquer 01");
+scoobyDoo.latir(); */
+
+/* //Curso_JavaScript_023_Classes.js
+//Curso_JavaScript_024_Metodos-Getters_Setters_Estáticos.js
+
+/*
+function Animal (nome, genero){
+	//Atributos
+	this.nome = nome;
+	this.genero = genero;
+	//Metodos
+	this.realizarSom = function(som){
+		console.log(som);
+	}
+	this.outroMetodoQualquer = function(action){
+		console.log(`Executo uma ação em cima do retornado em ${action}. E retorno nome = ${this.nome}.`)
+	}
+}
+
+class Animal{
+
+  //Constructor é um metodo especial
+  //que se executa no momento de instanciar a classe.
+	constructor (nome, genero){
+    this.nome = nome;
+	  this.genero = genero;
+  }
+
+	//Metodos
+	realizarSom(som){
+		console.log(som);
+	}
+	outroMetodoQualquer(action){
+		console.log(`Executo uma ação em cima do retornado em ${action}. E retorno nome = ${this.nome}.`)
+	}
+}
+
+const ratatouille = new Animal("Ratatoouille", "Macho");
+const margarida = new Animal("Margarida","Femea");
+
+//console.log(ratatouille);
+//ratatouille.realizarSom("Se somos aquilo que comemos, então só quero comer coisas boas");
+//console.log(margarida);
+//margarida.outroMetodoQualquer("Bater no Donald");
+
+class Cachorro extends Animal{
+  constructor(nome,genero,raca){
+    super(nome,genero);
+    this.raca = raca;
+    this.regiao = null;
+  }
+  outroMetodoQualquer(action){
+    console.log(`Nova ação - ${action}`);
+  }
+  latir(){
+    console.log("Au au au au");
+  }
+  static oQueEh(){
+    console.log("É um mamífero carnívoro da família dos canídeos, subespécie do lobo, e talvez o mais antigo animal domesticado pelo ser humano.")
+  }
+
+//Getters_Setters - Metodos especiais que nos permitem estabelecer e obter os
+//valores de atributos da nossa classe.
+
+  get getRegiao(){
+    return this.regiao;
+  }
+
+  set setRegiao(regiao){
+    this.regiao = regiao;
+  } 
+
+}
+
+const scoobyDoo = new Cachorro("Scooby Doo", "Macho", "Bloodhound");
+
+//console.log(scoobyDoo);
+//scoobyDoo.outroMetodoQualquer("Ação do scooby");
+//scoobyDoo.latir();
+
+Cachorro.oQueEh();
+
+scoobyDoo.setRegiao = "Estados Unidos";
+
+console.log(scoobyDoo.getRegiao);
+
+console.log(scoobyDoo); */
+
+
+/* //Curso_JavaScript_025_Console.js
+
+
+console.log(console);
+
+console.error("Isso é um erro");
+
+console.warn("Isso é um aviso");
+
+console.info("Isso é um informativo");
+console.info("Um registro do que passou em nossa aplicação");
+
+let nome = "Rodrigo",
+sobrenome = "Muniz",
+idade = 35;
+
+console.log(nome);
+console.log(sobrenome);
+console.log(idade);
+
+console.log(nome,sobrenome,idade);
+
+console.log(`Ola, meu nome é ${nome} ${sobrenome} e tenho ${idade} anos`);
+
+console.log(`Ola, meu nome é %s %s tenho %d anos`, nome, sobrenome, idade);
+
+console.clear();
+
+console.log(window);
+
+console.log(document);
+
+console.clear();
+
+console.group("Lista das aulas realizadas:");
+console.log("Curso_JavaScript_000_Introducao");
+console.log("Curso_JavaScript_001_Caracteristicas-Gramatica");
+console.log("Curso_JavaScript_002_Variaveis-Global-Bloco");
+console.groupEnd();
+
+console.log(console);
+
+console.table(Object.entries(console).sort());
+
+const numeros = [1,2,3,4,5];
+const vogais = ["a","e","i","o","u"];
+
+console.table(numeros);
+console.table(vogais);
+console.clear();
+
+const personagem = {
+	nome: "Joel",
+  sexo: "Masculino",
+  jogo: ["TLOS", "TLOUS2"],
+};
+
+console.table(personagem);
+
+console.clear();
+
+console.time("Execução de medição de tempo");
+
+const grandeArray = Array(1000000);
+
+for (let i=0 ; i < grandeArray.length ; i++){
+  grandeArray[i] = i;
+}
+
+console.timeEnd("Execução de medição de tempo");
+
+console.log(grandeArray);
+
+console.clear();
+
+for (let i = 0 ; i <= 100 ; i++ ){
+  console.count("contabilizar codigo for: ");
+	console.log(i);
+}
+
+console.clear();
+
+let x = 3;
+let y = 2;
+
+let provaXY = "Se espera que X seja sempre menor que Y";
+
+console.assert(x<y, {x,y,provaXY}); */
+
+/* //Curso_JavaScript_026_Date.js
+
+let data = new Date();
+console.log(data);
+
+console.log(data.getDate());
+
+console.log(data.getDay());
+
+console.log(data.getMonth());
+
+console.log(data.getFullYear());
+
+console.log(data.getHours());
+console.log(data.getMinutes());
+console.log(data.getSeconds());
+
+console.log(data.getMilliseconds());
+
+console.log(data.toString());
+
+console.log(data.toDateString());
+
+console.log(data.toLocaleString());
+
+console.log(data.toLocaleDateString());
+
+console.log(data.toLocaleTimeString());
+
+console.log(data.getUTCDate());
+console.log(data.getUTCHours());
+
+console.clear();
+
+//console.log(Date.now());
+
+let niverMuniz = new Date(1985,2,9);
+console.log(niverMuniz); */
+
+
+/* //Curso_JavaScript_027_Math.js
+
+console.log(Math);
+console.log(Math.PI);
+
+//abs... devolve o valor absoluto de um numero
+console.log(Math.abs(7.8));
+console.log(Math.abs(-7.8));
+
+//ceil ... arredondamento ao posterior imediato
+console.log(Math.ceil(7.8));
+console.log(Math.ceil(7.1));
+
+//floor .. arredondamento ao anterior imediato
+console.log(Math.floor(7.8));
+console.log(Math.floor(7.1));
+
+//round... arredondamento
+console.log(Math.round(7.8));
+console.log(Math.round(7.49));
+console.log(Math.round(7.50));
+console.log(Math.round(7.2));
+
+//SQRT - raiz quadrada 
+console.log(Math.sqrt(81));
+
+//POW - elevar a potencia 
+console.log(Math.pow(3,3));
+
+//sign - teste numero 
+console.log(Math.sign(-6.8));
+console.log(Math.sign(6.8));
+console.log(Math.sign(0));
+console.log(Math.sign(0.1));
+
+//random - aleatorio entre 0 e 1
+//console.log(Math.random() * 60);
+console.log(Math.round(Math.random()*60)); */
+
+
+
+/* //Curso_JavaScript_028_Operador_Short-Circuit.js
+
+//true || (qualquer coisa) é avaliado como verdadeiro através de curto-circuito.
+
+//falso && (qualquer coisa)  é avaliado como falso através de curto-circuito.
+
+function boasVindas(nome = "Desconhecido"){
+  console.log(`Seja bem-vindo ${nome}!`);
+}
+
+boasVindas("Rodrigo");
+boasVindas();
+
+function boasVindasCC (nome){
+  nome = nome || "Desconhecido";
+  console.log(`Seja bem-vindo ${nome}!`);
+}
+
+boasVindasCC("Rodrigo");
+boasVindasCC();
+
+console.log("Parte da esquerda" && "Parte da direita");
+console.log(0==0 || "Parte da direita"); */
+
+/* //Curso_JavaScript_029_Window.Alert_Confirm_Prompt.js
+
+//console.log(window);
+
+//window.alert("Isso é um alerta!");
+
+//window.confirm("Isso é uma confirmação.");
+
+//prompt("Isso é um aviso. Insira um valor: ");
+
+let alerta = alert("Isso é um alerta!");
+let confirmacao = confirm("Isso é uma confirmação.");
+let aviso = prompt("Isso é um aviso. Insira um valor: ");
+
+console.log("Alerta:");
+console.log(alerta);
+console.log("Confirmação:");
+console.log(confirmacao);
+console.log("Aviso:");
+console.log(aviso); */
+
+
+/* //Curso_JavaScript_030_Expressões_Regulares.js
+
+/* "Em ciência da computação, uma expressão 
+regular ou "Regex" (ou os estrangeirismos 
+regex ou regexp [1] , abreviação do inglês 
+regular expression) provê uma forma concisa e 
+flexível de identificar cadeias de caracteres 
+de interesse, como caracteres particulares, 
+palavras ou padrões de caracteres. Expressões 
+regulares são escritas numa linguagem formal 
+que pode ser interpretada por um processador de 
+expressão regular, um programa que serve um 
+gerador de analisador sintático ou examina o 
+texto e identifica as partes que casam com a 
+especificação dada.
+
+let loremLipsun = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+
+let expRegular = new RegExp ("Lorem","g");
+let expRegularDois = /Lorem/;
+let expRegularTres = /enim/;
+let expRegularQuatro = /excepteur/;
+let expRegularCinco = /excepteur/i;
+
+//console.log(expRegular.test(loremLipsun));
+//console.log(expRegularDois.exec(loremLipsun));
+
+//console.log(expRegularTres.test(loremLipsun));
+//console.log(expRegularTres.exec(loremLipsun));
+
+//console.log(expRegularQuatro.test(loremLipsun));
+//console.log(expRegularQuatro.exec(loremLipsun));
+
+//console.log(expRegularCinco.test(loremLipsun));
+//console.log(expRegularCinco.exec(loremLipsun));
+
+//let expRegularCBd = /\d/i;
+
+//console.log(expRegularCBd.test(loremLipsun));
+//console.log(expRegularCBd.exec(loremLipsun));
+
+let expRegularRep = /in{5}/ig;
+
+console.log(expRegularRep.test(loremLipsun));
+console.log(expRegularRep.exec(loremLipsun)); */
+
+/* //Curso_JavaScript_031_Funcoes_Anonimas_IIFEs.js
+//IIFE (Immediately Invoked Function Expression)
+
+//Função Anonima AutoExecutavel
+
+//alert("Olá");
+
+//classica
+(function () {
+  console.log("Primeira função IIFE");
+}) ();
+
+(function (d,w,c) {
+  console.log("Segunda função IIFE");
+  console.log(d);
+  console.log(w);
+  c.log("impressão com o C");
+}) (document, window, console);
+
+//Crockford (Autor do livro - The Good Parts)
+((function () {
+	console.log("Primeira função IIFE - Crockford");
+}) () );
+
+//Unaria
++function () {
+	console.log("Primeira função IIFE - Unaria");
+}();
+
+//Facebook
+!function () {
+	console.log("Primeira função IIFE - Facebook");
+}(); */
+
+//Curso_JavaScript_032_Modulos_(Importar_Exportar).js
+
+
+
+
+//Curso_JavaScript_033_Exercicios_Introdução.js
+
+//1 - Programe uma função que conte o número de caracteres de uma cadeia de texto.
+//Ex. "ex01Funcao("Ola Mundo!")" - me retornaria 10.
+
+//2 - Programe uma função que te devolva o texto recortado segundo o numero de caracteres indicado.
+//Ex. "ex02Funcao("Ola Mundo!", 3)" - me retornaria "Ola".
+
+//3 - Programe uma função que dada uma String, te devolva um array de texto - separado por um certo tipo de caracter.
+//Ex. "ex03Funcao("Ola como voce esta","") - me retorna ["ola","como","voce","esta"].
+
+//4 - Programe uma função que me retorne o texto X vezes. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

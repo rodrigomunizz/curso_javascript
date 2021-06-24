@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundamentos JavaScript</title>
+  </head>
+
+  <body>
+    <h1>Fundamentos JavaScript</h1>
+    <h1>038_Exercicios_Aula_05</h1>
+
+    <script>
+
+/* //1 - Programe uma função que conte o número de caracteres de uma cadeia de texto.
+//Ex. "ex01Funcao("Ola Mundo!")" - me retornaria 10.
+
+        function contarCaracteres(cadeiaDeTexto = ""){
+            if(!cadeiaDeTexto){
+                console.warn("Não há nenhum valor de caracter.")
+            }else{
+                console.info(`A cadeia de texto "${cadeiaDeTexto}" tem ${cadeiaDeTexto.length} caracteres.`);
+            }
+        }
+
+        const contarCaracteresExpressada = (cadeiaDeTexto = "") => 
+            (!cadeiaDeTexto) 
+                ? console.warn("Não há nenhum valor de caracter.") 
+                : console.info(`A cadeia de texto "${cadeiaDeTexto}" tem ${cadeiaDeTexto.length} caracteres.`);
+
+        //contarCaracteres();
+        //contarCaracteres("Ola Mundo!");
+
+        contarCaracteresExpressada();
+        contarCaracteresExpressada("Ola Mundo!");
+
+//2 - Programe uma função que te devolva o texto recortado segundo o numero de caracteres indicado.
+//Ex. "ex02Funcao("Ola Mundo!", 3)" - me retornaria "Ola".
+
+        const recortarTexto = (cadeiaDeTexto = "", longitude = undefined) => 
+            (!cadeiaDeTexto) 
+                ? console.warn("Não há nenhum valor de caracter.")
+                : (longitude === undefined)
+                    ? console.warn("Não há nenhum valor de corte.")
+                    : console.info(cadeiaDeTexto.slice(0,longitude));
+
+        recortarTexto();
+        recortarTexto("Ola Mundo!", 5);
+        recortarTexto("Ola Mundo!", 0);
+        recortarTexto("", 3);
+        recortarTexto("Ola Mundo!");
+
+//3 - Programe uma função que dada uma String, te devolva um array de texto - separado por um certo tipo de caracter.
+//Ex. "ex03Funcao("Ola como voce esta","") - me retorna ["ola","como","voce","esta"].
+
+        const cadeiaTextoSeparado = (cadeiaDeTexto = "", separador = undefined) =>
+            (!cadeiaDeTexto) 
+                ? console.warn("Não há nenhum valor de caracter.")
+                : (separador === undefined)
+                    ? console.warn("Não há nenhum valor de separador.")
+                    : console.info(cadeiaDeTexto.split(separador));
+
+        
+        cadeiaTextoSeparado("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elementum nisi et turpis suscipit venenatis. Donec in neque lobortis, elementum turpis vel, ultrices nibh. Mauris vitae lorem pulvinar metus auctor finibus tincidunt eget justo. Duis in mollis magna. In rhoncus pretium orci in malesuada. Aenean sodales tempus odio. Aliquam lorem lorem, scelerisque non sem ultrices, imperdiet elementum nibh. Sed eget nunc nec est dictum tristique eget ut diam.", " ");
+        cadeiaTextoSeparado("janeiro, fevereiro, março", ", ");
+        cadeiaTextoSeparado();
+        cadeiaTextoSeparado("Olá mundo!");
+        cadeiaTextoSeparado("", " ");
+
+//4 - Programe uma função que me retorne o texto X vezes.
+
+        const repetirTexto = (texto = "", vezes = undefined) => {
+            if(!texto){
+                return console.warn ("Não há nenhum valor de caracter.");
+            }else if (vezes === undefined){
+                return console.warn ("Não há nenhum valor para se repetir.");
+            }else if (vezes === 0){
+                return console.error ("Valor para se repetir não pode ser zero.");
+            }else if (Math.sign(vezes) === -1){
+                return console.error ("Valor para se repetir não pode ser negativo.");
+            }else {
+                for (let i = 1 ; i <= vezes ; i++){
+                    console.info(`${texto},${i}`);
+                }
+            }
+        }
+    
+    repetirTexto("",5);     */
+
+/* //5) Programe uma função que inverta as palavras de uma cadeia 
+//de texto. Ex: funcaoEx05("Ola Mundo") devolverá "odnuM alO".
+
+const inverterCadeiaTexto = (texto = "") =>
+    (!texto)
+        ? console.warn ("Não há nenhum valor de caracter.")
+        : console.info (texto.split("").reverse().join(""));
+
+inverterCadeiaTexto();
+inverterCadeiaTexto("Olá Mundo!");
+
+//6) Programe uma função para contar o número de vezes que se 
+//repete uma letra/palavra em um texto. Ex: funcaoEx06("Olá 
+//mundo, amo esse mundo. Um dia eu volto ao mundo.", "mundo") 
+//devolverá 3.
+
+const contarPalavrasEmTextos = (texto="",procura="") => {
+    if (!texto){
+        return console.warn ("Não há nenhum valor de texto.");
+    }else if (!procura) {
+        return console.warn ("Não há nenhum valor para procurar.");
+    }
+
+    let i = 0;
+    let contador = 0;
+
+    while ( i !== -1 ){
+        i = texto.indexOf(procura,i);
+        if (i!==-1){
+            i++;
+            contador++
+        }
+    }
+    return console.info (`A procura realizada ${procura} - foi encontrada ${contador} veze(s).`);
+}
+
+contarPalavrasEmTextos();
+contarPalavrasEmTextos("Olá mundo, amo esse mundo. Um dia eu volto ao mundo.", "mundo");
+contarPalavrasEmTextos("Olá mundo, amo esse mundo. Um dia eu volto ao mundo.",);
+
+//7) Programe uma função que valide se uma palavra ou frase 
+//dada, é um palíndromo (palíndromo é uma palavra, frase ou 
+//qualquer outra sequência de unidades que tenha a propriedade 
+//de poder ser lida tanto da direita para a esquerda como da 
+//esquerda para a direita). Ex: funcaoEx07("Tenet") devolverá 
+//true.
+
+const palindromo = (palavra = "") => {
+    if (!palavra){
+        return console.warn ("Não há nenhum valor de texto.");
+    }
+
+    palavra = palavra.toLocaleLowerCase();
+
+    let palavraReversa = palavra.split("").reverse().join("");
+
+    return (palavra === palavraReversa)
+        ? console.info(`Sim é palindromo.`)
+        : console.info(`Não é palindromo.`);
+}
+
+palindromo("TeNet");
+
+
+//8) Programe uma função que elimine um certo padrão de 
+//caracteres de um texto fornecido. Ex: funcaoEx08("xyz1, 
+//xyz2, xyz3, xyz4 e xyz5", "xyz") devolverá  "1, 2, 3, 4 e 
+//5"
+
+const eliminarCaracteres = (texto = "", padrao = "") =>
+    (!texto)
+        ? console.warn ("Não há nenhum valor de texto.")
+        : (!padrao)
+            ? console.warn ("Não há nenhum valor de padrão para remoção.")
+            : console.info (texto.replace(new RegExp(padrao, "ig"), ""));
+
+eliminarCaracteres("");
+eliminarCaracteres("xyz1, xyz2, xyz3, xyz4 e xyz5", "xyz");
+eliminarCaracteres("xyz1, xyz2, xyz3, xyz4 e xyz5"); */
+
+/* //9) Programe uma função que obtenha um número aleatório entre 501 e 600.
+
+const aleatorio = () => console.info(Math.round((Math.random() * 100) + 500));
+
+aleatorio();
+
+//10) Programe uma função que receba um número e avalie se é capicua ou não
+//(Capicua ou número palíndromo é um número cujo reverso é ele próprio).
+//Ex. ex10Funcao(2002) devolverá true.
+
+const numberCapicua = (numero = 0) => {
+    if (!numero){
+        return console.warn("Não foi inserido um valor para número.");
+    }
+
+    if (typeof numero !== "number"){
+        return console.error (`O valor "${numero}" adicionado, NÃO é um número.`);
+    }
+
+    numero = numero.toString();
+    let numeroReverso = numero.split("").reverse().join("");
+
+    return ((numero) === (numeroReverso))
+        ? console.info (`Sim é Capicua. Numero original - ${numero} - e numero reverso - ${numeroReverso} -`)
+        : console.info (`Não é Capicua. Numero original - ${numero} - e numero reverso - ${numeroReverso} -`)
+}
+
+
+numberCapicua();
+numberCapicua("23");
+numberCapicua({});
+numberCapicua(2000);
+numberCapicua(2002);
+
+//11) Programe uma função que calcule o fatorial de um número (fatorial de um 
+//número natural n, representado por n!, é o produto de todos os inteiros
+//positivos menores ou iguais a n). Ex. ex11Função(3) devolverá 6.
+
+const fatorial = (numero = undefined) => {
+    if (numero === undefined){
+        return console.warn("Não foi inserido um valor para número.");
+    }
+
+    if (numero === 0 || numero === 1){
+        return console.error ("Por definição o fatorial de 0 e 1 é sempre 1.");
+    }
+
+    if (typeof numero !== "number"){
+        return console.error (`O valor "${numero}" adicionado, NÃO é um número.`);
+    }
+
+    if (Math.sign(numero) === -1){
+        return console.error ("O valor não pode ser negativo.");
+    }
+
+    let fatorial = 1;
+    
+    for (let i = numero; i > 1; i--){
+        fatorial = fatorial * i;
+        //fatorial *= i;
+    }
+
+    return console.info (`O valor fatorial de ${numero} adicionado, é o número ${fatorial}.`)
+}
+
+fatorial();
+fatorial("7");
+fatorial(0);
+fatorial(1);
+fatorial(-3);
+fatorial(6);
+fatorial(3); */
+
+
+/* //12) Programe uma função que determine se um numero é ou não primo 
+//(número primo é aquele que é dividido apenas por um e por ele mesmo). 
+//Ex.  ex12Funcao(11) devolverá true.
+
+const numeroPrimo = (numero = undefined) => {
+    if (numero === undefined){
+        return console.warn("Não foi inserido um valor para número")
+    }
+    if (numero ===0 || numero ===1){
+        return console.error("Por definição: o fatorial do 1 é 1 e o fatorial do 0 também é 1.")
+    }
+    if (typeof numero !== "number"){
+        return console.error(`O valor "${numero}" adicionado, NÃO é um número.`)
+    }
+    if (Math.sign(numero) === -1){
+        return console.error ("O número não pode ser negativo.")
+    }
+
+    let divisivel = false;
+
+    for (let i = 2; i < numero; i++){
+        if ((numero % i) === 0){
+            divisivel = true;
+            break;
+        }
+    }
+
+    return (divisivel)
+        ? console.log(`O numero "${numero}" NÃO é primo`)
+        : console.log(`O numero "${numero}" É primo`)
+}
+
+// numeroPrimo();
+// numeroPrimo("7");
+// numeroPrimo(0);
+// numeroPrimo(1);
+// numeroPrimo(-3);
+// numeroPrimo(11);
+// numeroPrimo(12);
+
+//13) Programe uma função que determine se um número é par ou impar.
+//Ex. ex13Funcao(30) devolverá Par.
+
+const numeroParOuImpar = (numero = undefined) => {
+    if (numero === undefined){
+        return console.warn("Não foi inserido um valor para número")
+    }
+    if (typeof numero !== "number"){
+        return console.error(`O valor "${numero}" adicionado, NÃO é um número.`)
+    }
+
+    return ((numero % 2) === 0)
+        ? console.info (`O numero "${numero}" É par`)
+        : console.info (`O numero "${numero}" É impar`); 
+
+}
+
+//numeroParOuImpar();
+//numeroParOuImpar(-2);
+//numeroParOuImpar("17");
+//numeroParOuImpar(3);
+
+//14) Programe uma função para converter graus Celsius para Fahrenheit e
+//vice-versa. Ex: ex14Funcao(0,"C") devolverá 32°F.
+
+const converteGraus = (graus = undefined, unidade = undefined) => {
+    if (graus === undefined || unidade === undefined){
+        return console.warn("Não foi inserido um valor para converter ou unidade.")
+    }
+    if (typeof graus !== "number"){
+        return console.error(`O valor "${graus}" adicionado, NÃO é um número.`)
+    }
+    if (typeof unidade !== "string"){
+        return console.error(`O valor "${unidade}" adicionado, NÃO é valido.`)
+    }
+    if (unidade.length !==1 || !/(C|F)/.test(unidade)){//expressão regular
+        return console.error(`O valor "${unidade}" adicionado, NÃO é valido.`)
+    }
+
+    if (unidade === "C"){
+        let F = (graus * (9/5)) + 32
+        return console.info (`${graus}ºC = ${F}ºF`)
+    }else if (unidade === "F"){
+        let C = (graus - 32) * (5/9)
+        return console.info (`${graus}ºF = ${C}ºC`)
+    }
+}
+
+converteGraus();
+converteGraus(0,"C");
+converteGraus(32,"F");
+converteGraus(32,"D");
+ */
+
+//15) Programe uma função para converter números de base
+//binárias a decimal e vice-versa.
+
+const converterDecimalBinario = (numero = undefined, base = undefined) => {
+    if (numero === undefined || base === undefined) {
+        return console.warn("Não foi inserido um valor para converter ou a base.")
+    }
+    if (typeof numero !== "number"){
+        return console.error(`O valor "${numero}" adicionado, NÃO é um número.`)
+    }
+    if (typeof base !== "number"){
+        return console.error(`O valor "${base}" adicionado, NÃO é um número.`)
+    }
+    if (base === 2){
+        return console.info(`${numero} base ${base} = ${parseInt(numero,base)} base 10`)
+    }else if (base === 10){
+        return console.info(`${numero} base ${base} = ${numero.toString(2)} base 2`)
+    }else {
+        return console.error(`A base ${base} não é valida.`)
+    }
+}
+
+// converterDecimalBinario();
+// converterDecimalBinario("2");
+// converterDecimalBinario(100);
+// converterDecimalBinario(100,"2");
+// converterDecimalBinario(100,2);
+// converterDecimalBinario(110010, 2);
+// converterDecimalBinario(4,10);
+
+//16) Programe uma função que devolve o valor final depois de 
+//se aplicar um desconto a uma quantidade válida. 
+//Ex: ex16Funcao(1000, 10) devolverá 900.
+
+const aplicarDesconto = (valor = undefined, desconto = 0) =>{
+    if (valor === undefined) {
+        return console.warn("Não foi inserido um valor.")
+    }
+    if (typeof valor !== "number"){
+        return console.error(`O valor "${valor}" adicionado, NÃO é um número.`)
+    }
+    if (valor <= 0){
+        return console.error("Valor não pode ser menor ou igual a zero.")
+    }
+    if (typeof desconto !== "number"){
+        return console.error(`O valor "${desconto}" adicionado, NÃO é um número.`)
+    }
+    if (desconto < 0){
+        return console.error("Desconto não pode ser menor a zero.")
+    }
+
+    return console.info (`${valor}, aplicado um desconto de ${desconto}, temos ${valor - ((valor *desconto)/100)}`)
+}
+
+// aplicarDesconto();
+// aplicarDesconto("texto");
+// aplicarDesconto(-5);
+// aplicarDesconto(100,-5);
+// aplicarDesconto(100);
+// aplicarDesconto(100,5);
+
+
+//17) Programe uma função que dada uma data válida, determine 
+//quantos anos se passaram até a data atual. 
+//Ex. ex17Function(new Date(1985,2,9)) devolverá 36 anos 
+//(na data desse video).
+
+const calcularAnos = (data = undefined) => {
+    if (data === undefined) {
+        return console.warn("Não foi inserido uma data.")
+    }
+    if (!(data instanceof Date)){
+        return console.error("O valor inserido não é uma data válida.")
+    }
+
+    let hojeMenosData = new Date().getTime() - data.getTime();
+
+    let anosEmMs = 1000 * 60 * 60 * 24 * 365
+    //1 segundo em ms, * 60 para minutos, * 60 para as horas, * 24 para os dias, * 365 para os anos. 
+
+    let anosDiferenca = Math.floor(hojeMenosData/anosEmMs);
+
+    return (Math.sign(anosDiferenca)===-1)
+        ? console.info(`Faltam ${Math.abs(anosDiferenca)} anos para ${data.getFullYear()}.`)
+        : (Math.sign(anosDiferenca) === 1)
+            ? console.info(`Passaram ${Math.abs(anosDiferenca)} anos desde ${data.getFullYear()}.`)
+            : console.info(`Estamos no ano atual - ${data.getFullYear()}.`)
+
+}
+
+calcularAnos();
+calcularAnos({});
+calcularAnos(false);
+calcularAnos(new Date());
+calcularAnos(new Date(1985,2,9));
+calcularAnos(new Date(3000,2,9));
+
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
