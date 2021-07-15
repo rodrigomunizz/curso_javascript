@@ -8,7 +8,7 @@
 
   <body>
     <h1>Fundamentos JavaScript</h1>
-    <h1>038_Exercicios_Aula_05</h1>
+    <h1>041_Exercicios_Aula_08</h1>
 
     <script>
 
@@ -397,7 +397,7 @@ const aplicarDesconto = (valor = undefined, desconto = 0) =>{
 // aplicarDesconto(100,5);
 
 
-//17) Programe uma função que dada uma data válida, determine 
+/* //17) Programe uma função que dada uma data válida, determine 
 //quantos anos se passaram até a data atual. 
 //Ex. ex17Function(new Date(1985,2,9)) devolverá 36 anos 
 //(na data desse video).
@@ -430,7 +430,328 @@ calcularAnos({});
 calcularAnos(false);
 calcularAnos(new Date());
 calcularAnos(new Date(1985,2,9));
-calcularAnos(new Date(3000,2,9));
+calcularAnos(new Date(3000,2,9)); */
+
+
+/* //18) Programe uma função que dada uma cadeia de texto, conte o número de
+//vogais e o número de consoantes.
+//Ex:  ex18Function("Ola Mundo") retorna Vogais: 4, Consoantes: 4.
+
+const contarVogaisConsoantes = (texto = "") =>{
+    if(!texto) {
+        return console.warn ("Não foi inserido um valor de texto.");
+    }
+    if (typeof texto !== "string"){
+        return console.error(`O valor "${texto}" adicionado, não é uma string.`);
+    }
+    
+    let consoantes = 0;
+    let vogais = 0;
+
+    //texto = texto.toLowerCase();
+
+    for (let letra of texto){
+        if (/[AEIOUaeiouÁÉÍÓÚáéíóúÀÈÌÒÙàèìòùÂÊÎÔÛâêîôûÃÕãõ]/.test(letra)){
+            vogais++;
+        }
+        if (/[BCÇDFGHJKLMNPQRSTVXWYZbcçdfghjklmnpqrstvxwyz]/.test(letra)){
+            consoantes++
+        }
+    }
+
+    return console.info({
+        texto,
+        vogais,
+        consoantes,
+    });
+}
+
+//contarVogaisConsoantes();
+//contarVogaisConsoantes(7);
+//contarVogaisConsoantes("Olá mundo");
+//contarVogaisConsoantes("Consequat non et mollit occaecat");
+
+
+//19) Programe uma função que valida em um texto se tem um nome válido.
+//Ex. ex19Funcao("Rodrigo Muniz") devolverá true.
+
+const vericarNomeCompleto = (nomeCompleto = "") => {
+    if(!nomeCompleto) {
+        return console.warn ("Não foi inserido um valor de texto.");
+    }
+    if (typeof nomeCompleto !== "string"){
+        return console.error(`O valor "${nomeCompleto}" adicionado, não é uma string.`);
+    }
+
+    let expReg = /^[A-Za-zÁáÉéÍíÓóÚúÃãÕõ\s]+$/g.test(nomeCompleto);
+
+    //^ não pode haver nada antes
+    //$ não pode haver nada depois
+    //+ verifica cada caracter na cadeia de caracteres
+    //\s espaço em branco
+    //g coringa - para buscar em todos os caracteres
+
+    return expReg
+        ? console.info (`O nome "${nomeCompleto}", é um nome válido.`)
+        : console.warn (`O nome "${nomeCompleto}", NÃO é um nome válido.`);
+}
+
+// vericarNomeCompleto();
+// vericarNomeCompleto(7);
+// vericarNomeCompleto("Rodri,go");
+// vericarNomeCompleto("Rodrigo7Muniz");
+// vericarNomeCompleto("Rodrigo Muniz");
+
+
+
+//20) Programe uma função que valida em um texto se tem um email válido,
+//Ex. ex20Funcao("rodrigomunizz@gmail.com") devolverá true.
+
+const verificarEmail = (email = "") => {
+    if(!email) {
+        return console.warn ("Não foi inserido um valor de texto.");
+    }
+    if (typeof email !== "string"){
+        return console.error(`O valor "${email}" adicionado, não é uma string.`);
+    }
+
+    let expReg = /^[a-zA-Z0-9][a-zA-Z0-9\._-]+@([a-zA-Z0-9\._-]+\.)[a-zA-Z-0-9]{2,15}$/i.test(email);
+
+    return expReg
+        ? console.info (`O e-mail "${email}" adicionado, é um e-mail válido.`)
+        : console.warn (`O e-mail "${email}" adicionado, NÃO é um e-mail válido.`);
+
+}
+
+verificarEmail("rodrigo");
+verificarEmail("rodrigomunizz@gmail");
+verificarEmail("rodrigomunizz@gmail,com");
+verificarEmail("rodrigomunizz@gmail.com"); */
+
+
+//21) Programe uma função que informado um array com números,
+//devolve um outro array com os numeros elevado ao quadrado.
+//Ex: ex21_Function([1, 2, 3]) devolverá [1, 4, 9].
+
+const devolveQuadrados = (arrayNumeros = undefined) => {
+    if (arrayNumeros === undefined){
+        return console.warn ("Não foi inserido um array com números.");
+    }
+
+    if (!(arrayNumeros instanceof Array)){
+        return console.error ("O valor inserido não é um array.");
+    }
+
+    if (arrayNumeros.length === 0 ){
+        return console.error ("O array inserido esta vazio.");
+    }
+
+    //forof
+    for (let num of arrayNumeros){
+        if (typeof num !== "number"){
+            return console.error (`O valor ${num} do array, não é um número.`);
+        }
+    }
+
+    const newArrayNumeros = arrayNumeros.map (el => el * el);
+
+    return console.log (`Array original de números : ${arrayNumeros}.\nArray elevado ao quadrado: ${newArrayNumeros}.`);
+
+}
+
+// devolveQuadrados();
+// devolveQuadrados(false);
+// devolveQuadrados([]);
+// devolveQuadrados([1,"2",3]);
+// devolveQuadrados([1,2,3]);
+
+
+//22) Programe uma função que informado um array com números,
+//devolve um outro array com o número mais alto e o número mais baixo.
+//Ex: ex22_Function([1, 102, 5, 199, -30]) devolverá [199, -30].
+
+const devolverMenorMaiorNum = (arrayNumeros = undefined) => {
+    if (arrayNumeros === undefined){
+        return console.warn ("Não foi inserido um array com números.");
+    }
+
+    if (!(arrayNumeros instanceof Array)){
+        return console.error ("O valor inserido não é um array.");
+    }
+
+    if (arrayNumeros.length === 0 ){
+        return console.error ("O array inserido esta vazio.");
+    }
+
+    //forof
+    for (let num of arrayNumeros){
+        if (typeof num !== "number"){
+            return console.error (`O valor ${num} do array, não é um número.`);
+        }
+    }
+
+    //math e spread operator
+    return console.info(`Array original: ${arrayNumeros}.\nValor Maior: ${Math.max(...arrayNumeros)}.\nValor Menor: ${Math.min(...arrayNumeros)}.`);
+}    
+
+// devolverMenorMaiorNum("3");
+// devolverMenorMaiorNum([1, 102, 5, 199, -30]);
+// devolverMenorMaiorNum([30]);
+
+
+//23) Programe uma função que informado um array com números,
+//devolve um objeto com os numeros pares e outro objeto com os numeros impares.
+//Ex: ex23_Function([1,2,3,4,5,6,7,8,9,0]) devolverá
+//{pares: [2,4,6,8,0], impares: [1,3,5,7,9]}.
+
+
+const devolveParesImpares = (arrayNumeros = undefined) => {
+    if (arrayNumeros === undefined){
+        return console.warn ("Não foi inserido um array com números.");
+    }
+
+    if (!(arrayNumeros instanceof Array)){
+        return console.error ("O valor inserido não é um array.");
+    }
+
+    if (arrayNumeros.length === 0 ){
+        return console.error ("O array inserido esta vazio.");
+    }
+
+    //forof
+    for (let num of arrayNumeros){
+        if (typeof num !== "number"){
+            return console.error (`O valor ${num} do array, não é um número.`);
+        }
+    }
+
+    return console.info(
+        {
+            pares: arrayNumeros.filter(num => (num % 2) === 0),
+            impares: arrayNumeros.filter(num => (num % 2) !== 0),
+        }
+    );
+
+}
+
+// devolveParesImpares();
+// devolveParesImpares(true);
+// devolveParesImpares("oi");
+// devolveParesImpares([1]);
+// devolveParesImpares([1,2,3,4,5,6,7,8,9,0]);
+
+
+//24) Programe uma função que informado um array com números, devolve um objeto
+//com os números ordenados em forma ascendente e um de forma descendente.
+//Ex: ex24_Function([7,5,7,8,6]) devolverá { asc: [5,6,7,7,8],
+//desc: [8,7,7,6,5] }.
+
+const ordernaoArrays = (arrayNumeros = undefined) => {
+    if (arrayNumeros === undefined){
+        return console.warn ("Não foi inserido um array com números.");
+    }
+    if (!(arrayNumeros instanceof Array)){
+        return console.error("O valor inserido não é um array.");
+    }
+    if (arrayNumeros.length === 0){
+        return console.error("O array inserido está vazio.");
+    }
+
+    //forof
+
+    for (let num of arrayNumeros){
+        if (typeof num !== "number"){
+            return console.error(`O valor ${num} do array, não é um número.`);
+        }
+    }
+
+    return console.info({
+        arrayNumeros,
+        ascendente: arrayNumeros.map(el => el).sort(),
+        descendente: arrayNumeros.map(el => el).sort().reverse()
+    })
+
+}
+
+// ordernaoArrays();
+// ordernaoArrays(true);
+// ordernaoArrays("oi");
+// ordernaoArrays([1]);
+// ordernaoArrays([1,2,4,"oi"]);
+// ordernaoArrays([7,5,7,8,6]);
+
+
+//25) Programe uma função que informado um array com elementos,
+//elimine os elementos duplicados.
+//Ex: ex25_Function(["y", 22, "y", 2, "10", 10, true, true])
+//devolverá ["y", 22, 2, "10", 10, true].
+
+const removeDupli = (arrayElementos = undefined) => {
+    if (arrayElementos === undefined){
+        return console.warn ("Não foi inserido um array com elementos.");
+    }
+    if (!(arrayElementos instanceof Array)){
+        return console.error("O valor inserido não é um array.");
+    }
+    if (arrayElementos.length === 0){
+        return console.error("O array inserido está vazio.");
+    }
+
+    return console.info({
+        arrayOriginal: arrayElementos,
+        semDuplicados: arrayElementos.filter((value,index,self) => self.indexOf(value)===index)
+    })
+}
+
+// removeDupli();
+// removeDupli([]);
+// removeDupli([1]);
+// removeDupli(["y", 22, "y", 2, "10", 10, true, true]);
+
+//26) Programe uma função que informado um array com números,
+//obtenha a media.
+//Ex: ex26_Function([9,8,7,6,5,4,3,2,1,0]) devolverá 4.5.
+
+const realizarMedia = (arrayNumeros = undefined) => {
+    if (arrayNumeros === undefined){
+        return console.warn ("Não foi inserido um array com números.");
+    }
+    if (!(arrayNumeros instanceof Array)){
+        return console.error("O valor inserido não é um array.");
+    }
+    if (arrayNumeros.length === 0){
+        return console.error("O array inserido está vazio.");
+    }
+
+    //forof
+
+    for (let num of arrayNumeros){
+        if (typeof num !== "number"){
+            return console.error(`O valor ${num} do array, não é um número.`);
+        }
+    }
+
+    return console.info(
+        arrayNumeros.reduce((total, num, index, arrayNumeros) => {
+            total += num
+            if (index == (arrayNumeros.length-1)) {
+                return `A media de ${arrayNumeros.join(" + ")} é igual a ${total/arrayNumeros.length}`;
+            }else{
+                return total;
+            }
+        })
+    )
+} 
+
+realizarMedia([9,8,7,6,5,4,3,2,1,0])
+
+
+
+
+
+
+
+
 
 
 

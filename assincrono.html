@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assincrono JavaScript</title>
+  </head>
+
+  <body>
+    <h1>Assincrono JavaScript</h1>
+    <h1>042_SetInterval & SetTimeout</h1>
+
+    <script>
+
+        //console.log("Antes do setTimeout");
+
+        // setTimeout(() => {
+        //     console.log("Codigo que será executado uma vez")
+        // }, 5000);
+
+        // setInterval(() => {
+        //     console.log("Codigo executado N vezes medido pelo tempo em MS do interval");            
+        // }, 1000);
+        
+        //let temporizador = setTimeout(() => {
+        //    console.log(new Date().toLocaleTimeString());
+        //}, 1000);
+
+        //clearTimeout(temporizador);
+
+        //console.log("após o cleartimeout");
+
+        let temporizador = setInterval(() => {
+            console.log(new Date().toLocaleTimeString());
+        }, 1000);
+
+        //clearInterval(temporizador);
+        console.log("após o clear interval");
+
+
+
+
+
+
+
+
+    </script>
+  
+</body>
+</html>
