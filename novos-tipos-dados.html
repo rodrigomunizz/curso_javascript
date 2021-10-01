@@ -1,0 +1,50 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundamentos JavaScript - Novos tipos de Dados</title>
+  </head>
+
+  <body>
+    <h1>Fundamentos JavaScript - Novos tipos de Dados</h1>
+    <h1>Curso_JavaScript_047_Symbols-Símbolo.js</h1>
+
+    <script>
+      let id = Symbol("id");
+      let id2 = Symbol("id2");
+      console.log(id === id2);
+      console.log(id, id2);
+
+      const NOME = Symbol("nome");
+      const SAUDACAO = Symbol("saudação");
+
+      const pessoa = {
+        [NOME]: "Rodrigo",
+        idade: 36,
+      };
+
+      console.log(pessoa);
+
+      pessoa.NOME = "Rodrigo Muniz";
+      console.log(pessoa);
+
+      console.log(pessoa.NOME);
+      console.log(pessoa[NOME]);
+
+      pessoa[SAUDACAO] = function () {
+        console.log("Olá!!!!");
+      };
+
+      console.log(pessoa);
+
+      pessoa[SAUDACAO]();
+
+      for (let propriedade in pessoa) {
+        console.log(propriedade);
+        console.log(pessoa[propriedade]);
+      }
+
+      console.log(Object.getOwnPropertySymbols(pessoa));
+    </script>
+  </body>
+</html>
