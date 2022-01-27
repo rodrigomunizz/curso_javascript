@@ -7,44 +7,369 @@
 
   <body>
     <h1>Fundamentos JavaScript - Novos tipos de Dados</h1>
-    <h1>Curso_JavaScript_047_Symbols-Símbolo.js</h1>
+    <h1>Curso_JavaScript_054_Propriedades Dinâmicas de Objetos</h1>
+    <p>paragrafo01</p>
+    <p>paragrafo02</p>
+    <p>paragrafo03</p>
+
+
 
     <script>
+
+      /*    //Curso_JavaScript_047_Symbols-Símbolo.js
+
       let id = Symbol("id");
-      let id2 = Symbol("id2");
-      console.log(id === id2);
+      let id2 = Symbol("id");
+      console.log(id===id2);
       console.log(id, id2);
+      console.log(typeof id, typeof id2);
 
       const NOME = Symbol("nome");
       const SAUDACAO = Symbol("saudação");
 
       const pessoa = {
         [NOME]: "Rodrigo",
-        idade: 36,
-      };
+        idade:35
+      }
 
       console.log(pessoa);
 
       pessoa.NOME = "Rodrigo Muniz";
+
       console.log(pessoa);
 
       console.log(pessoa.NOME);
       console.log(pessoa[NOME]);
 
-      pessoa[SAUDACAO] = function () {
+      pessoa[SAUDACAO] = function(){
         console.log("Olá!!!!");
-      };
+      }
 
       console.log(pessoa);
 
       pessoa[SAUDACAO]();
 
-      for (let propriedade in pessoa) {
+      console.log("For");
+
+      for (let propriedade in pessoa){
         console.log(propriedade);
         console.log(pessoa[propriedade]);
       }
 
-      console.log(Object.getOwnPropertySymbols(pessoa));
+      console.log(Object.getOwnPropertySymbols(pessoa)); */
+
+/* //Curso_JavaScript_048_Sets.js
+
+      console.log("Curso_JavaScript_048_Sets");
+
+      const set = new Set([1,2,3,3,4,5,true,false,false,{},{},"olá","OLÁ"]);
+
+      console.log(set);
+      console.log(set.size);
+
+      const setDois = new Set();
+
+      setDois.add(1);
+      setDois.add(2);
+      setDois.add(2);
+      setDois.add(3);
+      setDois.add(true);
+      setDois.add(false);
+      setDois.add(true);
+      setDois.add({});
+
+      console.log(setDois);
+      console.log(setDois.size);
+
+      console.log("=========");
+
+      for (item of set){
+        console.log(item);
+      }
+
+      console.log("=========");
+
+      setDois.forEach(item => console.log(item));
+
+      //console.log(set[0]);
+
+      let arrSet = Array.from(set);
+
+      console.log(arrSet);
+
+      console.log(arrSet[0]);
+
+      set.delete("OLÁ");
+      console.log(set);
+
+      console.log(set.has("olá"));
+      console.log(set.has("OLÁ"));
+
+      setDois.clear();
+      console.log(setDois); */
+      
+/* //Curso_JavaScript_049_Maps.js
+
+      console.log("Curso_JavaScript_049_Maps.js");
+
+      let mapa = new Map();
+
+      mapa.set("nome","Rodrigo");
+      mapa.set("sobrenome","Muniz");
+      mapa.set("idade",35);
+
+      console.log(mapa);
+      console.log(mapa.size);
+
+      console.log(mapa.has("email"));
+      console.log(mapa.has("nome"));
+
+      console.log(mapa.get("nome"));
+
+      mapa.set("idade", 36);
+      console.log(mapa.get("idade"));
+
+      //mapa.delete("idade");
+      //console.log(mapa);
+
+      mapa.set(10, "dez");
+      mapa.set(false, "falso");
+      mapa.set({},{});
+
+      for (let[key, value] of mapa){
+        console.log(`Chave: ${key} - Valor: ${value}.`);
+      }
+
+      const mapaDois = new Map ([
+        ["Curso","Programação JavaScript"],
+        ["Professor","Rodrigo Muniz"],
+        ["Aula",49],
+        [null,"nulo"]
+      ])
+
+      console.log(mapaDois);
+
+      const chavesMapaDois = [...mapaDois.keys()];
+      const valoresMapaDois = [...mapaDois.values()];
+
+      console.log(chavesMapaDois,valoresMapaDois); */
+   
+/* //Curso_JavaScript_050_Weak - Sets & Maps.js
+
+
+      //const wsTest = new WeakSet([1,2,3,3,4,5,true,false,false,{},{},"olá","OLÁ",]);
+
+      // const wsTest = new WeakSet();
+      // let valor1 = {"valor1":1};
+      // let valor2 = {"valor2":2};
+      // let valor3 = {"valor3":3};
+      // wsTest.add(valor1);
+      // wsTest.add(valor2);
+
+      // console.log(wsTest);
+
+      // console.log(wsTest.has(valor1));
+      // console.log(wsTest.has(valor3));
+
+      // wsTest.delete(valor2);
+      // console.log(wsTest);
+
+      // wsTest.add(valor2);
+      // wsTest.add(valor3);
+
+      // console.log(wsTest);
+
+      // setInterval(() => console.log(wsTest), 1000);
+
+      // setTimeout(() => {
+      //   valor1 = null;
+      //   valor2 = null;
+      //   valor3 = null;
+      // }, 5000);
+
+
+      // const wm = new WeakMap ([
+      //   ["Curso","Programação JavaScript"],
+      //   ["Professor","Rodrigo Muniz"],
+      //   ["Horas",1000],
+      //   [null, "nulo"]
+      // ])
+
+      const wm = new WeakMap ();
+      let chave1 = {};
+      let chave2 = {};
+      let chave3 = {};
+
+      wm.set(chave1,1);
+      wm.set(chave2,2);
+      console.log(wm);
+
+      console.log(wm.has(chave1));
+      console.log(wm.has(chave3));
+
+      console.log(wm.get(chave1));
+      console.log(wm.get(chave2));
+      console.log(wm.get(chave3));
+
+      wm.delete(chave2);
+      console.log(wm);
+
+      wm.set(chave2,2);
+      wm.set(chave3,3);
+      console.log(wm);
+
+      setInterval(() => console.log(wm), 1000);
+
+      setTimeout(() => {
+        chave1 = null;
+        chave2 = null;
+        chave3 = null;
+        
+      }, 5000); */
+
+/* //Curso_JavaScript_051_Iteration_Protocols.js
+
+      //const iteravel = [1,2,3,4];
+      //const iteravel = "olá Mundo";
+      //const iteravel = new Set([1,2,3,3,4,5,6,6]);
+
+      const iteravel = new Map ([
+        ["Curso","Programação JavaScript"],
+        ["Professor","Rodrigo Muniz"],
+        ["Horas",1000],
+        [null,"nulo"]
+      ])
+
+      //Acessamos o iterador da variavel iteravel
+      const iterador = iteravel[Symbol.iterator]();
+
+      console.log(iteravel);
+      console.log(iterador);
+
+      // console.log(iterador.next());
+      // console.log(iterador.next());
+      // console.log(iterador.next());
+      // console.log(iterador.next());
+      // console.log(iterador.next());
+
+      let next = iterador.next();
+
+      while (!next.done) {
+        console.log(next.value);
+        next = iterador.next();
+      } */
+
+/* //Curso_JavaScript_052_Generators.js
+
+function* iteravel(){
+  yield "olá";
+  console.log("Primeiro console");
+  yield "olá 2";
+  console.log("Segundo console");
+  yield "olá 3";
+  yield "olá 4";
+  console.log("Terceiro console");
+}
+
+let iterador = iteravel();
+
+// console.log(iterador.next());
+// console.log(iterador.next());
+// console.log(iterador.next());
+// console.log(iterador.next());
+// console.log(iterador.next());
+
+// for (let y of iterador){
+//   console.log(y);
+// }
+
+const arr = [...iteravel()];
+console.log(arr);
+
+console.log("========================")
+
+function quadrado(valor){
+  setTimeout(() => {
+    return console.log({valor, resultado: valor * valor})
+  },Math.random() * 1000);
+}
+
+function* generador(){
+  console.log("Inicio da função");
+  yield quadrado(0);
+  yield quadrado(1);
+  yield quadrado(2);
+  yield quadrado(3);
+  yield quadrado(4);
+  yield quadrado(5);
+  console.log("Fim da função");
+}
+      
+let gen = generador();
+
+for (let y of gen){
+  console.log(y);
+}
+
+ */
+
+/* //Curso_JavaScript_053_Proxies.js
+
+const pessoa= {
+  nome:"",
+  sobrenome:"",
+  idade:0
+}
+
+const manejadorHandler = {
+  set(obj,prop,valor){
+    if (Object.keys(obj).indexOf(prop) === -1) {
+      return console.error (`A propriedade "${prop}" - não existe no objeto.`);
+    }
+
+    if ((prop === "nome" || prop === "sobrenome") && !(/^[A-Za-zÁáÉéÍíÓóÚúÃãÕõ\s]+$/g.test(valor))){
+      return console.error (`A propriedade "${prop}" - só aceita letras e espaço em branco.`);
+    }
+
+
+    
+    obj[prop] = valor;
+
+  }
+}
+
+const rodrigo = new Proxy(pessoa, manejadorHandler);
+
+rodrigo.nome = "Rodrigo";
+rodrigo.sobrenome = "Mun_iz";
+rodrigo.idade = 36;
+rodrigo.twitter = "@rodrigomunizz"
+
+console.log(rodrigo);
+console.log(pessoa);
+ */
+
+
+//Curso_JavaScript_054_Propriedades Dinâmicas de Objetos.js
+
+let aleatorio = Math.round((Math.random() * 100) + 5);
+
+const objUsuarios ={
+  propriedade: "Valor",
+  [`id_${aleatorio}`]: "Valor aleatorio"
+};
+
+console.log(objUsuarios);
+
+const usuarios = ["Rodrigo", "Link", "Mario", "Zelda", "Kratos"];
+
+usuarios.forEach((usuario,index) => objUsuarios[`id_${index}`] = usuarios);
+
+console.log(objUsuarios);
+
+
+
+
     </script>
   </body>
 </html>
